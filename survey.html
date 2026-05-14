@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>డిజిటల్ అక్షరాస్యత సర్వే (Digital Literacy Survey)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: var(--primary); font-size: 24px; margin-bottom: 5px; }
+        h2 { text-align: center; font-size: 14px; color: #64748b; margin-top: 0; margin-bottom: 25px; }
+        .section-title {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 16px; }
+        input[type="text"] {
+            width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 16px;
+        }
+        .radio-group { display: flex; flex-direction: column; gap: 8px; }
+        .radio-option {
+            display: flex; align-items: center; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; transition: 0.2s;
+        }
+        .radio-option:hover { background: #f1f5f9; }
+        input[type="radio"] { margin-right: 12px; transform: scale(1.2); }
+        button {
+            width: 100%; background: var(--primary); color: white; border: none; padding: 14px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; margin-top: 20px;
+        }
+        button:hover { background: #1d4ed8; }
+        .export-btn { background: #10b981; margin-top: 10px; }
+        .export-btn:hover { background: #059669; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>డిజిటల్ అక్షరాస్యత సర్వే</h1>
+    <h2>Digital Literacy Survey for Local Shopkeepers</h2>
+    
+    <form id="surveyForm">
+        <!-- Shop Details -->
+        <div class="form-group">
+            <label for="shopName">దుకాణం పేరు / యజమాని పేరు (Shop / Owner Name):</label>
+            <input type="text" id="shopName" required placeholder="పేరు రాయండి">
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-title">1. ప్రస్తుత డిజిటల్ సాధనాలు (Digital Tools)</div>
+        
+        <div class="form-group">
+            <label>మీరు వ్యాపారంలో స్మార్ట్‌ఫోన్ వాడుతున్నారా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q1" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q1" value="కాదు"> కాదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>మీరు డిజిటల్ పేమెంట్స్ (UPI) వాడుతున్నారా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q2" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q2" value="కాదు"> కాదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>మీరు ఏ యాప్స్ ఎక్కువగా వాడుతున్నారు?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q3" value="PhonePe/GPay/Paytm" required> PhonePe / Google Pay / Paytm / Amazon Pay</label>
+                <label class="radio-option"><input type="radio" name="q3" value="ఏదీ లేదు"> ఏదీ లేదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>కస్టమర్ల వివరాలు, అప్పుల లెక్కల కోసం యాప్స్ వాడుతున్నారా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q4" value="Khatabook/OkCredit" required> Khatabook / OkCredit</label>
+                <label class="radio-option"><input type="radio" name="q4" value="సాధారణ బుక్"> సాధారణ బుక్ (డైరీ)</label>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-title">2. UPI సమస్యలు (UPI Issues)</div>
+
+        <div class="form-group">
+            <label>UPI వాడేటప్పుడు డబ్బులు కట్ అయి, అవతలి వారికి వెళ్లకుండా ఆగుపోతున్నాయా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q5" value="ఎప్పుడూ లేదు" required> ఎప్పుడూ లేదు</label>
+                <label class="radio-option"><input type="radio" name="q5" value="అప్పుడప్పుడు"> అప్పుడప్పుడు</label>
+                <label class="radio-option"><input type="radio" name="q5" value="చాలా సార్లు"> చాలా సార్లు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>మీ షాపులో ఇంటర్నెట్ లేదా నెట్‌వర్క్ సమస్యల వల్ల పేమెంట్స్ ఆగిపోతున్నాయా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q6" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q6" value="కాదు"> కాదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>కస్టమర్ డబ్బులు పంపినప్పుడు వచ్చే 'సౌండ్ బాక్స్' (Sound Box) మీకు సహాయపడుతుందా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q7" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q7" value="లేదు"> లేదు</label>
+                <label class="radio-option"><input type="radio" name="q7" value="నా దగ్గర సౌండ్ బాక్స్ లేదు"> నా దగ్గర సౌండ్ బాక్స్ లేదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>బ్యాంక్ సర్వర్ సరిగ్గా పని చేయకపోవడం వల్ల వ్యాపారం దెబ్బతింటుందా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q8" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q8" value="కాదు"> కాదు</label>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-title">3. ఆన్‌లైన్ మోసాల భయం (Fear of Scams)</div>
+
+        <div class="form-group">
+            <label>ఫేక్ స్క్రీన్‌షాట్ లేదా నకిలీ మెసేజ్ చూపి కస్టమర్లు మిమ్మల్ని మోసం చేశారా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q9" value="అవును" required> అవును</label>
+                <label class="radio-option"><input type="radio" name="q9" value="లేదు"> లేదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>లింక్స్ క్లిక్ చేయమని వచ్చే మోసపూరిత SMS లేదా కాల్స్ పట్ల మీకు అవగాహన ఉందా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q10" value="పూర్తిగా తెలుసు" required> పూర్తిగా తెలుసు</label>
+                <label class="radio-option"><input type="radio" name="q10" value="కొద్దిగా తెలుసు"> కొద్దిగా తెలుసు</label>
+                <label class="radio-option"><input type="radio" name="q10" value="అస్సలు తెలియదు"> అస్సలు తెలియదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>డిజిటల్ యాప్స్ వాడితే మీ బ్యాంక్ అకౌంట్ లోని డబ్బులు పోతాయనే భయం ఉందా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q11" value="చాలా భయం ఉంది" required> చాలా భయం ఉంది</label>
+                <label class="radio-option"><input type="radio" name="q11" value="కొద్దిగా భయం ఉంది"> కొద్దిగా భయం ఉంది</label>
+                <label class="radio-option"><input type="radio" name="q11" value="అస్సలు భయం లేదు"> అస్సలు భయం లేదు</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>మీ ఫోన్ UPI పిన్ (PIN) లేదా OTP ఎవరికైనా షేర్ చేయవచ్చా?</label>
+            <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="q12" value="చేయవచ్చు" required> చేయవచ్చు</label>
+                <label class="radio-option"><input type="radio" name="q12" value="చేయకూడదు"> చేయకూడదు</label>
+                <label class="radio-option"><input type="radio" name="q12" value="తెలియదు"> తెలియదు</label>
+            </div>
+        </div>
+
+        <button type="submit">డేటా సేవ్ చేయండి (Save Data)</button>
+        <button type="button" class="export-btn" id="exportBtn">Excel/CSV డౌన్‌లోడ్ చేయండి</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('surveyForm');
+    const exportBtn = document.getElementById('exportBtn');
+
+    // Handle form submission and save data to LocalStorage
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            timestamp: new Date().toLocaleString(),
+            shopName: document.getElementById('shopName').value,
+            q1: document.querySelector('input[name="q1"]:checked').value,
+            q2: document.querySelector('input[name="q2"]:checked').value,
+            q3: document.querySelector('input[name="q3"]:checked').value,
+            q4: document.querySelector('input[name="q4"]:checked').value,
+            q5: document.querySelector('input[name="q5"]:checked').value,
+            q6: document.querySelector('input[name="q6"]:checked').value,
+            q7: document.querySelector('input[name="q7"]:checked').value,
+            q8: document.querySelector('input[name="q8"]:checked').value,
+            q9: document.querySelector('input[name="q9"]:checked').value,
+            q10: document.querySelector('input[name="q10"]:checked').value,
+            q11: document.querySelector('input[name="q11"]:checked').value,
+            q12: document.querySelector('input[name="q12"]:checked').value
+        };
+
+        let savedResponses = JSON.parse(localStorage.getItem('surveyData')) || [];
+        savedResponses.push(formData);
+        localStorage.setItem('surveyData', JSON.stringify(savedResponses));
+
+        alert('సర్వే విజయవంతంగా సేవ్ చేయబడింది! (Survey Saved Successfully!)');
+        form.reset();
+        window.scrollTo(0, 0);
+    });
+
+    // Export local storage data into a clean CSV file for Excel analysis
+    exportBtn.addEventListener('click', function() {
+        let savedResponses = JSON.parse(localStorage.getItem('surveyData')) || [];
+        if (savedResponses.length === 0) {
+            alert('డౌన్‌లోడ్ చేయడానికి ఎటువంటి డేటా లేదు! (No data to download!)');
+            return;
+        }
+
+        const headers = ["Timestamp", "Shop/Owner Name", "Q1: Smartphone Use", "Q2: Uses UPI", "Q3: Apps Used", "Q4: Credit Apps", "Q5: UPI Failures", "Q6: Internet Issues", "Q7: Sound Box Help", "Q8: Server Impact", "Q9: Fake Screenshots", "Q10: SMS/Call Awareness", "Q11: Fear of Losing Money", "Q12: Shared PIN/OTP"];
+        
+        let csvContent = "\uFEFF"; // Adding UTF-8 BOM for Telugu script alignment in Excel
+        csvContent += headers.join(",") + "\n";
+
+        savedResponses.forEach(row => {
+            let rowData = [
+                `"${row.timestamp}"`,
+                `"${row.shopName}"`,
+                `"${row.q1}"`,
+                `"${row.q2}"`,
+                `"${row.q3}"`,
+                `"${row.q4}"`,
+                `"${row.q5}"`,
+                `"${row.q6}"`,
+                `"${row.q7}"`,
+                `"${row.q8}"`,
+                `"${row.q9}"`,
+                `"${row.q10}"`,
+                `"${row.q11}"`,
+                `"${row.q12}"`
+            ];
+            csvContent += rowData.join(",") + "\n";
+        });
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `Digital_Literacy_Survey_Data.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+</script>
+
+</body>
+</html>
